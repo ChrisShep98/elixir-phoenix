@@ -1,4 +1,4 @@
-# PhoenixLearning
+# Phoenix-Learning
 
 To start your Phoenix server:
 
