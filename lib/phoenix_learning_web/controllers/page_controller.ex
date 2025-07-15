@@ -6,4 +6,10 @@ defmodule PhoenixLearningWeb.PageController do
     # so skip the default app layout.
     render(conn, :home, layout: false)
   end
+
+  def users(conn, _params) do
+    IO.puts("Users function hit")
+    render(conn, :users, layout: false)
+
+  end
 end
