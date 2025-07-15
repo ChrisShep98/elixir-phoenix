@@ -8,8 +8,14 @@ defmodule PhoenixLearningWeb.PageController do
   end
 
   def users(conn, _params) do
-    IO.puts("Users function hit")
-    render(conn, :users, layout: false)
+    users = [
+      %{id: 1, name: "Alice", email: "alice@email.com"},
+      %{id: 1, name: "Bob", email: "Bob@email.com"}
+
+    ]
+
+    json(conn, %{users: users})
+    render(conn, :users, users: users, layout: false)
 
   end
 end
