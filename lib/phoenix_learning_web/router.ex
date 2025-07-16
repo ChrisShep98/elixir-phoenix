@@ -21,6 +21,11 @@ defmodule PhoenixLearningWeb.Router do
     get "/users", PageController, :users
   end
 
+  scope "/api", PhoenixLearningWeb do
+    pipe_through :api # <-- allows us to setup middleware later
+    resources "/posts", PostController, except: [:new, :edit]
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", PhoenixLearningWeb do
   #   pipe_through :api
