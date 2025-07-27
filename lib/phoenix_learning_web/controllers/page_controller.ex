@@ -14,8 +14,8 @@ defmodule PhoenixLearningWeb.PageController do
 
     ]
 
-    json(conn, %{users: users})
-    render(conn, :users, users: users, layout: false)
+
+    json(conn, %{users: users}) # sends back json
 
   end
 end

@@ -12,7 +12,7 @@ defmodule PhoenixLearningWeb.PostJSON do
   Renders a single post.
   """
   def show(%{post: post}) do
-    %{data: data(post)}
+    %{data: data(post)} # <--- data here is what the name of the array is when we return posts. Can change this to anything
   end
 
   defp data(%Post{} = post) do
