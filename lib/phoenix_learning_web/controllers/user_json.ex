@@ -1,5 +1,6 @@
 defmodule PhoenixLearningWeb.UserJSON do
   alias PhoenixLearning.Accounts.User
+  alias PhoenixLearning.Posts.Post
 
   @doc """
   Renders a list of users.
@@ -19,7 +20,16 @@ defmodule PhoenixLearningWeb.UserJSON do
     %{
       id: user.id,
       name: user.name,
-      email: user.email
+      email: user.email,
+      posts: for(post <- user.posts, do: PhoenixLearningWeb.PostJSON.data(post))
     }
   end
+
+  # defp post_data(%Post{} = post) do
+  #   %{
+  #     id: post.id,
+  #     title: post.title,
+  #     body: post.body,
+  #   }
+  # end
 end
